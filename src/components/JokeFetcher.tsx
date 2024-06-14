@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Joke from './Joke';
 
 const JokeFetcher: React.FC = () => {
   const [joke, setJoke] = useState<string>('');
@@ -21,7 +22,7 @@ const JokeFetcher: React.FC = () => {
 
   return (
     <div>
-      {error ? <p>{error}</p> : <p>{joke}</p>}
+      {error ? <p>{error}</p> : <Joke joke={joke} />}
       <button onClick={fetchJoke}>Get New Joke</button>
     </div>
   );
